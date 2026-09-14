@@ -1,14 +1,82 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>control de gastos
-    
-    </title>
+    <title>control de gastos</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+
+    <!-- Menú -->
+    <aside>
+        <h2>Control de Gastos</h2>
+        <ul>
+            <li>Inicio</li>
+            <li>Movimientos</li>
+            <li>Buscar</li>
+            <li>Resumen</li>
+        </ul>
+    </aside>
+
+
+    <main>
+        
+        <!-- Encabezado con usuario y botones de acción -->
+        <header>
+            <span>Hola, Luisa</span>
+            <div>
+                <button class="btn btn-ingreso">+ Registrar Ingreso</button>
+                <button class="btn btn-gasto">- Registrar Gasto</button>
+            </div>
+        </header>
+
+        <!-- Tarjetas de Saldo  -->
+        <section class="tarjetas-container">
+            <div class="card">
+                <h3>Saldo Disponible</h3>
+                <p class="monto">$ 3.450.800</p>
+            </div>
+            <div class="card">
+                <h3>Ingresos</h3>
+                <p class="monto texto-ingreso">$ 5.200.000</p>
+            </div>
+            <div class="card">
+                <h3>Gastos</h3>
+                <p class="monto texto-gasto">$ 1.749.000</p>
+            </div>
+        </section>
+
+        <!-- Tabla de Movimientos Recientes -->
+        <section>
+            <h3>Movimientos Recientes</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Categoría</th>
+                        <th>Fecha</th>
+                        <th>Descripción</th>
+                        <th>Monto</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Alimentación</td>
+                        <td>2026-10-25</td>
+                        <td>Almuerzo de trabajo</td>
+                        <td class="texto-gasto">-$ 45.900</td>
+                    </tr>
+                    <tr>
+                        <td>Salario</td>
+                        <td>2026-10-24</td>
+                        <td>Pago quincena</td>
+                        <td class="texto-ingreso">+$ 2.400.000</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+
 </body>
 </html>

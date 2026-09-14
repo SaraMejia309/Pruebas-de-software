@@ -1,0 +1,130 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Estructura general de la aplicación */
+body {
+    display: flex;
+    min-height: 100vh;
+    background-color: #f8f8f8;
+}
+
+/* Menú Lateral */
+aside {
+    width: 220px;
+    background-color: #3b5688;
+    color: white;
+    padding: 20px;
+}
+
+aside h2 {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+aside ul {
+    list-style: none;
+}
+
+aside li {
+    padding: 10px 0;
+    color: #cbd5e1;
+    cursor: pointer;
+}
+
+aside li:hover {
+    color: #ffffff;
+}
+
+/* 2. Estilos del Área Principal */
+main {
+    flex: 1;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+/* Botones de acción principal */
+.btn {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    color: white;
+    margin-left: 8px;
+}
+
+.btn-ingreso {
+    background-color: #10b981; /* Verde */
+}
+
+.btn-gasto {
+    background-color: #ef4444; /* Rojo */
+}
+
+/* Secciones generales */
+section {
+    margin-bottom: 20px;
+}
+
+.tarjetas-container {
+    display: flex;
+    gap: 15px;
+}
+
+.card {
+    flex: 1;
+    background-color: rgb(168, 224, 247);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.monto {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 8px;
+}
+
+/*montos e indicadores de saldo */
+.texto-ingreso {
+    color: #10b981;
+    font-weight: bold;
+}
+
+.texto-gasto {
+    color: #ef4444;
+    font-weight: bold;
+}
+
+/* Estilo mejorado para la tabla de movimientos */
+table {
+    width: 100%;
+    background-color: white;
+    border-collapse: collapse;
+    margin-top: 10px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+th {
+    background-color: #f1f5f9;
+}
