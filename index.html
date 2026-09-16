@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>control de gastos</title>
+    <title>Control de Gastos</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Menú -->
+    <!-- Menú Lateral -->
     <aside>
         <h2>Control de Gastos</h2>
         <ul>
@@ -19,19 +19,16 @@
         </ul>
     </aside>
 
-
+    <!-- Contenido Principal -->
     <main>
-        
-        <!-- Encabezado con usuario y botones de acción -->
         <header>
-            <span>Hola, Luisa</span>
+            <span>Hola, Usuario</span>
             <div>
                 <button class="btn btn-ingreso">+ Registrar Ingreso</button>
                 <button class="btn btn-gasto">- Registrar Gasto</button>
             </div>
         </header>
 
-        <!-- Tarjetas de Saldo  -->
         <section class="tarjetas-container">
             <div class="card">
                 <h3>Saldo Disponible</h3>
@@ -47,7 +44,6 @@
             </div>
         </section>
 
-        <!-- Tabla de Movimientos Recientes -->
         <section>
             <h3>Movimientos Recientes</h3>
             <table>
@@ -66,17 +62,65 @@
                         <td>Almuerzo de trabajo</td>
                         <td class="texto-gasto">-$ 45.900</td>
                     </tr>
-                    <tr>
-                        <td>Salario</td>
-                        <td>2026-10-24</td>
-                        <td>Pago quincena</td>
-                        <td class="texto-ingreso">+$ 2.400.000</td>
-                    </tr>
                 </tbody>
             </table>
         </section>
-
     </main>
 
+    <!-- Modal Formulario -->
+    <dialog id="modal-movimiento">
+        <div class="modal-content">
+            <h3>Nuevo Movimiento</h3>
+            <form id="form-movimiento">
+                <div class="form-group">
+                    <label for="tipo">Tipo de Transacción</label>
+                    <select id="tipo">
+                        <option value="gasto">Gasto (-)</option>
+                        <option value="ingreso">Ingreso (+)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="monto">Monto ($ COP)</label>
+                    <input type="number" id="monto" placeholder="Ej. 50000" min="1" required>
+                </div>
+                <div class="form-group">
+                    <label for="categoria">Categoría</label>
+                    <select id="categoria">
+                        <option value="Alimentación">Alimentación</option>
+                        <option value="Transporte">Transporte</option>
+                        <option value="Vivienda">Vivienda</option>
+                        <option value="Salario">Salario</option>
+                        <option value="Gasto Hormiga">Gasto Hormiga</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="fecha">Fecha</label>
+                    <input type="date" id="fecha" required>
+                </div>
+                <div class="form-group">
+                    <label for="descripcion">Descripción</label>
+                
+                </div class="form-group">
+                <label for="descripcion">Descripción (opcional)</label>
+                <input type="text" id="descripcion" placeholder="Ej. Almuerzo">
+
+                <div class="modal-acciones">
+                    <button type="button" class="btn-cancelar">Cancelar</button>
+                    <button type="submit" class="btn btn-ingreso">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </dialog>
+
+    <script>
+        const modal = document.getElementById('modal-movimiento');
+        const btnIngreso = document.querySelector('.btn-ingreso');
+        const btnGasto = document.querySelector('.btn-gasto');
+        const btnCancelar = document.querySelector('.btn-cancelar');
+
+        btnIngreso.addEventListener('click', () => modal.showModal());
+        btnGasto.addEventListener('click', () => modal.showModal());
+        btnCancelar.addEventListener('click', () => modal.close());
+    </script>
 </body>
 </html>
