@@ -1,4 +1,4 @@
-
+/* --- Reset Básico --- */
 * {
     margin: 0;
     padding: 0;
@@ -6,17 +6,17 @@
     font-family: Arial, sans-serif;
 }
 
-/* Estructura general de la aplicación */
+/* --- Estructura General --- */
 body {
     display: flex;
     min-height: 100vh;
     background-color: #f8f8f8;
 }
 
-/* Menú Lateral */
+/* --- Menú Lateral (Sidebar) --- */
 aside {
     width: 220px;
-    background-color: #3b5688;
+    background-color: #6392ea;
     color: white;
     padding: 20px;
 }
@@ -32,15 +32,23 @@ aside ul {
 
 aside li {
     padding: 10px 0;
-    color: #cbd5e1;
+    color: #bec6d0;
     cursor: pointer;
+    transition: color 0.2s ease, padding 0.2s ease;
 }
 
 aside li:hover {
     color: #ffffff;
 }
 
-/* Área Principal */
+aside li.active {
+    color: #ffffff;
+    font-weight: bold;
+    border-left: 3px solid #b6dbce;
+    padding-left: 8px;
+}
+
+/* --- Área Principal --- */
 main {
     flex: 1;
     padding: 20px;
@@ -54,9 +62,10 @@ header {
     padding: 15px 20px;
     border-radius: 8px;
     margin-bottom: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
-/* Botones de acción principal */
+/* --- Botones --- */
 .btn {
     padding: 10px 16px;
     border: none;
@@ -65,6 +74,11 @@ header {
     font-weight: bold;
     color: white;
     margin-left: 8px;
+    transition: opacity 0.2s ease;
+}
+
+.btn:hover {
+    opacity: 0.9;
 }
 
 .btn-ingreso {
@@ -75,7 +89,7 @@ header {
     background-color: #ef4444; /* Rojo */
 }
 
-/* Secciones generales */
+/* --- Secciones y Tarjetas Principales --- */
 section {
     margin-bottom: 20px;
 }
@@ -98,7 +112,7 @@ section {
     margin-top: 8px;
 }
 
-/*montos e indicadores de saldo */
+/* --- Indicadores de Saldo / Montos --- */
 .texto-ingreso {
     color: #10b981;
     font-weight: bold;
@@ -109,12 +123,81 @@ section {
     font-weight: bold;
 }
 
-/* Estilo mejorado para la tabla de movimientos */
+/* --- Buscador --- */
+#contenedor-buscador {
+    margin-bottom: 20px;
+}   
+
+#contenedor-buscador input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+}
+
+#contenedor-buscador input:focus {
+    border-color: #6392ea;
+}
+
+/* --- Vista de Resumen Dinámico --- */
+#contenedor-resumen {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 06px;
+    margin-bottom: 40px;
+} 
+
+#contenedor-resumen .card {
+    background-color: rgb(166, 144, 144);
+    border: 1px solid #eeeeee;
+    border-radius: 8px;
+    padding: 16px;
+    flex: 1 1 calc(25% - 16px);
+    min-width: 200px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+#contenedor-resumen .card h4 {
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #8f10a8;
+    text-transform: capitalize;
+}
+
+#contenedor-resumen .card .monto {
+    font-size: 18px;
+    color: #1e293b;
+}
+
+/* --- Tabla de Movimientos --- */
+#contenedor-movimientos {
+    max-height: 400px;
+    overflow-y: auto;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+#contenedor-movimientos::-webkit-scrollbar {
+    width: 8px;
+}
+
+#contenedor-movimientos::-webkit-scrollbar-thumb {
+    background-color: #cbd5e1;
+    border-radius: 4px;
+}
+
+#contenedor-movimientos::-webkit-scrollbar-track {
+    background-color: #f1f5f9;
+    border-radius: 4px;
+}
+
 table {
     width: 100%;
     background-color: white;
     border-collapse: collapse;
-    margin-top: 10px;
     border-radius: 8px;
     overflow: hidden;
 }
@@ -125,10 +208,17 @@ th, td {
     border-bottom: 1px solid #e2e8f0;
 }
 
-th {
+th, #contenedor-movimientos th {
     background-color: #f1f5f9;
+    font-weight: bold;
+    color: #334155;
 }
 
+#contenedor-movimientos tr:hover {
+    background-color: #f8fafc;
+}
+
+/* --- Formularios y Modales --- */
 .form-group {
     display: flex;
     flex-direction: column;
@@ -154,4 +244,21 @@ th {
 .form-group input:focus,
 .form-group select:focus {
     border-color: #10b981;
+}
+
+#modal-movimiento {
+    border: none;
+    border-radius: 8px;
+    padding: 20px;
+    width: 400px;
+    margin: auto;
+}           
+
+#modal-movimiento::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* --- Utilidades --- */
+.vista.oculto {
+    display: none !important;
 }

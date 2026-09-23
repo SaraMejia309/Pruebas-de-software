@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control de Gastos - Resumen</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <aside>
+        <h2>Control de Gastos</h2>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="movimientos.html">Movimientos</a></li>
+            <li><a href="buscar.html">Buscar</a></li>
+            <li class="active"><a href="resumen.html">Resumen</a></li>
+        </ul>
+    </aside>
+
+    <main>
+        <header>
+            <span>Resumen Financiero</span>
+        </header>
+
+        <section class="resumen-container">
+            <div class="card">
+                <h3>Saldo Disponible</h3>
+                <p class="monto">$ 3.450.800</p>
+            </div>
+
+
+            <div class="card">
+                <h3>Ingresos Totales</h3>
+                <p class="monto texto-ingreso">$ 5.200.000</p>
+            </div>
+            
+
+            <div class="card">
+                <h3>Gastos Totales</h3>
+                <p class="monto texto-gasto">$ 1.749.000</p>
+            </div>
+
+
+        </section>
+
+        <section class="grafico-container">
+            <h3>Distribución de Gastos por Categoría</h3>
+            <!-- Aquí se puede agregar un gráfico con librerías como Chart.js -->
+            <canvas id="grafico-gastos"></canvas>
+        </section>
+        
+
+    </main>
+
+</body>
+</html>

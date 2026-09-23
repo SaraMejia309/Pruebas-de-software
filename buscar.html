@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control de Gastos - Buscar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <aside>
+        <h2>Control de Gastos</h2>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="movimientos.html">Movimientos</a></li>
+            <li class="active"><a href="buscar.html">Buscar</a></li>
+            <li><a href="resumen.html">Resumen</a></li>
+        </ul>
+    </aside>
+
+    <main>
+        <header>
+            <span>Buscar Movimientos</span>
+        </header>
+
+        <section>
+            <h3>Filtrar por Categoría</h3>
+            <select id="filtro-categoria">
+                <option value="">Todas las Categorías</option>
+                <!-- Se llenará dinámicamente con JavaScript -->
+            </select>
+
+            <h3>Resultados de la Búsqueda</h3>
+            <table id="tabla-resultados">
+                <thead>
+                    <tr>
+                        <th>Categoría</th>
+                        <th>Fecha</th>
+                        <th>Descripción</th>
+                        <th>Monto</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Se llenará dinámicamente con JavaScript -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+</body>
+</html>

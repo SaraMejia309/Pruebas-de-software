@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Control de Gastos</title>
+    <title>Control de Gastos - Inicio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,10 +12,10 @@
     <aside>
         <h2>Control de Gastos</h2>
         <ul>
-            <li>Inicio</li>
-            <li>Movimientos</li>
-            <li>Buscar</li>
-            <li>Resumen</li>
+            <li class="active"><a href="index.html">Inicio</a></li>
+            <li><a href="movimientos.html">Movimientos</a></li>
+            <li><a href="buscar.html">Buscar</a></li>
+            <li><a href="resumen.html">Resumen</a></li>
         </ul>
     </aside>
 
@@ -66,43 +66,43 @@
             </table>
         </section>
     </main>
+     
+   <!-- Modal Formulario -->
+<dialog id="modal-movimiento">
+    <div class="modal-content">
+        <h3>Nuevo Movimiento</h3>
+        <form id="form-movimiento">
+            <div class="form-group">
+                <label for="tipo">Tipo de Transacción</label>
+                <select id="tipo">
+                    <option value="gasto">Gasto (-)</option>
+                    <option value="ingreso">Ingreso (+)</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="monto">Monto ($ COP)</label>
 
-    <!-- Modal Formulario -->
-    <dialog id="modal-movimiento">
-        <div class="modal-content">
-            <h3>Nuevo Movimiento</h3>
-            <form id="form-movimiento">
-                <div class="form-group">
-                    <label for="tipo">Tipo de Transacción</label>
-                    <select id="tipo">
-                        <option value="gasto">Gasto (-)</option>
-                        <option value="ingreso">Ingreso (+)</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="monto">Monto ($ COP)</label>
-                    <input type="number" id="monto" placeholder="Ej. 50000" min="1" required>
-                </div>
-                <div class="form-group">
-                    <label for="categoria">Categoría</label>
-                    <select id="categoria">
-                        <option value="Alimentación">Alimentación</option>
-                        <option value="Transporte">Transporte</option>
-                        <option value="Vivienda">Vivienda</option>
-                        <option value="Salario">Salario</option>
-                        <option value="Gasto Hormiga">Gasto Hormiga</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="fecha">Fecha</label>
-                    <input type="date" id="fecha" required>
-                </div>
-                <div class="form-group">
-                    <label for="descripcion">Descripción</label>
-                
-                </div class="form-group">
+
+                <input type="number" id="monto" placeholder="Ej. 50000" min="1" max="10000000" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="categoria">Categoría</label>
+                <select id="categoria">
+                    <!-- Se llena según el tipo -->
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="fecha">Fecha</label>
+                <input type="date" id="fecha" required>
+            </div>
+            
+            <div class="form-group">
                 <label for="descripcion">Descripción (opcional)</label>
-                <input type="text" id="descripcion" placeholder="Ej. Almuerzo">
+                <input type="text" id="descripcion" placeholder="Ej. Detalle del pago">
+            </div>
 
                 <div class="modal-acciones">
                     <button type="button" class="btn-cancelar">Cancelar</button>
@@ -112,15 +112,6 @@
         </div>
     </dialog>
 
-    <script>
-        const modal = document.getElementById('modal-movimiento');
-        const btnIngreso = document.querySelector('.btn-ingreso');
-        const btnGasto = document.querySelector('.btn-gasto');
-        const btnCancelar = document.querySelector('.btn-cancelar');
-
-        btnIngreso.addEventListener('click', () => modal.showModal());
-        btnGasto.addEventListener('click', () => modal.showModal());
-        btnCancelar.addEventListener('click', () => modal.close());
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
