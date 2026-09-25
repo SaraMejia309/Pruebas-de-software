@@ -24,28 +24,46 @@
         </header>
 
         <section>
-            <h3>Filtrar por Categoría</h3>
-            <select id="filtro-categoria">
-                <option value="">Todas las Categorías</option>
-                <!-- Se llenará dinámicamente con JavaScript -->
+    <h3>Buscar y Filtrar Movimientos</h3>
+    
+    <div style="display: flex; gap: 15px; margin-bottom: 20px;">
+        <!-- Selector 1: Tipo de transacción -->
+        <div class="form-group" style="flex: 1;">
+            <label for="filtro-tipo-buscar">Tipo de Transacción</label>
+            <select id="filtro-tipo-buscar">
+                <option value="">Todos los tipos</option>
+                <option value="gasto">Gastos</option>
+                <option value="ingreso">Ingresos</option>
             </select>
+        </div>
 
-            <h3>Resultados de la Búsqueda</h3>
-            <table id="tabla-resultados">
-                <thead>
-                    <tr>
-                        <th>Categoría</th>
-                        <th>Fecha</th>
-                        <th>Descripción</th>
-                        <th>Monto</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- Se llenará dinámicamente con JavaScript -->
-                </tbody>
-            </table>
-        </section>
+        <!-- Selector 2: Categorías (se llena según el Tipo) -->
+        <div class="form-group" style="flex: 1;">
+            <label for="filtro-categoria-buscar">Categoría</label>
+            <select id="filtro-categoria-buscar">
+                <option value="">Todas las Categorías</option>
+            </select>
+        </div>
+    </div>
+
+    <h3>Resultados de la Búsqueda</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Categoría</th>
+                <th>Fecha</th>
+                <th>Descripción</th>
+                <th>Monto</th>
+            </tr>
+        </thead>
+        <tbody id="cuerpo-buscar">
+            <!-- Se llena dinámicamente con JS -->
+        </tbody>
+    </table>
+</section>
+
     </main>
 
+    <script src="script.js"></script>
 </body>
 </html>

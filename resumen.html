@@ -23,35 +23,29 @@
             <span>Resumen Financiero</span>
         </header>
 
-        <section class="resumen-container">
+        <section class="tarjetas-container">
             <div class="card">
                 <h3>Saldo Disponible</h3>
-                <p class="monto">$ 3.450.800</p>
+                <p class="monto" id="monto-saldo">$ 0</p>
             </div>
-
-
             <div class="card">
                 <h3>Ingresos Totales</h3>
-                <p class="monto texto-ingreso">$ 5.200.000</p>
+                <p class="monto texto-ingreso" id="monto-ingresos">$ 0</p>
             </div>
-            
-
             <div class="card">
                 <h3>Gastos Totales</h3>
-                <p class="monto texto-gasto">$ 1.749.000</p>
+                <p class="monto texto-gasto" id="monto-gastos">$ 0</p>
             </div>
-
-
         </section>
 
-        <section class="grafico-container">
-            <h3>Distribución de Gastos por Categoría</h3>
-            <!-- Aquí se puede agregar un gráfico con librerías como Chart.js -->
-            <canvas id="grafico-gastos"></canvas>
+        <section>
+            <h3>Gastos por Categoría</h3>
+            <div id="contenedor-resumen" class="tarjetas-container">
+                <!-- Se llena dinámicamente con JS -->
+            </div>
         </section>
-        
-
     </main>
 
+    <script src="script.js"></script>
 </body>
 </html>

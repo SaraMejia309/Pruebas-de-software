@@ -32,15 +32,15 @@
         <section class="tarjetas-container">
             <div class="card">
                 <h3>Saldo Disponible</h3>
-                <p class="monto">$ 3.450.800</p>
+                <p class="monto" id="monto-saldo">$ 0</p>
             </div>
             <div class="card">
                 <h3>Ingresos</h3>
-                <p class="monto texto-ingreso">$ 5.200.000</p>
+                <p class="monto texto-ingreso" id="monto-ingresos">$ 0</p>
             </div>
             <div class="card">
                 <h3>Gastos</h3>
-                <p class="monto texto-gasto">$ 1.749.000</p>
+                <p class="monto texto-gasto" id="monto-gastos">$ 0</p>
             </div>
         </section>
 
@@ -55,54 +55,47 @@
                         <th>Monto</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td>Alimentación</td>
-                        <td>2026-10-25</td>
-                        <td>Almuerzo de trabajo</td>
-                        <td class="texto-gasto">-$ 45.900</td>
-                    </tr>
+                <tbody id="cuerpo-inicio">
+                    <!-- Se llena dinámicamente con JS -->
                 </tbody>
             </table>
         </section>
     </main>
-     
-   <!-- Modal Formulario -->
-<dialog id="modal-movimiento">
-    <div class="modal-content">
-        <h3>Nuevo Movimiento</h3>
-        <form id="form-movimiento">
-            <div class="form-group">
-                <label for="tipo">Tipo de Transacción</label>
-                <select id="tipo">
-                    <option value="gasto">Gasto (-)</option>
-                    <option value="ingreso">Ingreso (+)</option>
-                </select>
-            </div>
-            
-            <div class="form-group">
-                <label for="monto">Monto ($ COP)</label>
-
-
-                <input type="number" id="monto" placeholder="Ej. 50000" min="1" max="10000000" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="categoria">Categoría</label>
-                <select id="categoria">
-                    <!-- Se llena según el tipo -->
-                </select>
-            </div>
-            
-            <div class="form-group">
-                <label for="fecha">Fecha</label>
-                <input type="date" id="fecha" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="descripcion">Descripción (opcional)</label>
-                <input type="text" id="descripcion" placeholder="Ej. Detalle del pago">
-            </div>
+      
+    <!-- Modal Formulario -->
+    <dialog id="modal-movimiento">
+        <div class="modal-content">
+            <h3>Nuevo Movimiento</h3>
+            <form id="form-movimiento">
+                <div class="form-group">
+                    <label for="tipo">Tipo de Transacción</label>
+                    <select id="tipo">
+                        <option value="gasto">Gasto (-)</option>
+                        <option value="ingreso">Ingreso (+)</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="monto">Monto ($ COP)</label>
+                    <input type="number" id="monto" placeholder="Ej. 50000" min="1" max="10000000" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="categoria">Categoría</label>
+                    <select id="categoria">
+                        <!-- Se llena dinámicamente -->
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="fecha">Fecha</label>
+                    <input type="date" id="fecha" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="descripcion">Descripción (opcional)</label>
+                    <input type="text" id="descripcion" placeholder="Ej. Detalle del pago">
+                </div>
 
                 <div class="modal-acciones">
                     <button type="button" class="btn-cancelar">Cancelar</button>
